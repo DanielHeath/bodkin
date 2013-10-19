@@ -25,6 +25,8 @@ gem 'postmark-rails'
 
 gem 'capistrano', '~> 2.15'
 
+gem 'incoming'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
