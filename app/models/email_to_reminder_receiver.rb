@@ -19,7 +19,7 @@ class EmailToReminderReceiver
 
   def self.receive(mail)
     subject = mail["Subject"]
-    reply_to = mail["ReplyTo"]
+    reply_to = mail["ReplyTo"] || mail["FromFull"]["Email"]
     date = DateTime.parse mail["Date"]
     body = mail["HtmlBody"].blank? ? mail["TextBody"] : mail["HtmlBody"]
 
