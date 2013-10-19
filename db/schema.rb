@@ -11,15 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019001634) do
+ActiveRecord::Schema.define(version: 20131019060932) do
 
-  create_table "reminders", force: true do |t|
-    t.string   "email"
-    t.datetime "when"
-    t.string   "subject"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "reminders" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
