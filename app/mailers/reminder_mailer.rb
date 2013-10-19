@@ -1,11 +1,11 @@
 class ReminderMailer < ActionMailer::Base
   default from: "reminder@bodk.in"
-  default body: ""
 
   def reminder_email(reminder)
     mail(
       to: reminder.email,
       subject: "Reminder: #{reminder.subject}") do |format|
+      format.html { render text: reminder.body }
       format.text { render text: reminder.body }
     end
   end
@@ -13,7 +13,7 @@ class ReminderMailer < ActionMailer::Base
   def reply_email(reminder)
     mail(
       to: reminder.email,
-      subject: "Got it - I'll remind you on #{Kronic.format(reminder.when)} <n/t>") do |format|
+      subject: "Got it - I'll remind you at #{reminder.when} <n/t>") do |format|
       format.text { render text: "You'll get a reminder email at the time you asked for." }
     end
 

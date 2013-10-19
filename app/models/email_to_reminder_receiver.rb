@@ -1,7 +1,5 @@
 require 'chronic'
 
-
-
 class EmailToReminderReceiver
 
   def self.parse(str, date)
