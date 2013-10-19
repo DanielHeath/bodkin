@@ -1,5 +1,5 @@
 class ReminderMailer < ActionMailer::Base
-  default from: "from@bodk.in"
+  default from: "reminder@bodk.in"
   default body: ""
 
   def reminder_email(reminder)

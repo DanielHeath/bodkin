@@ -6,7 +6,7 @@ class EmailToReminderReceiver
 
   def self.parse(str, date)
     # Oh god why
-    words = str.gsub("_", " ").split(" ")
+    words = str.gsub("_", " ").gsub(":", " ").split(/ +/)
 
     prefixes = words.inject([]) { |arr, entry|
       arr << ((arr.last || []) + [entry])
