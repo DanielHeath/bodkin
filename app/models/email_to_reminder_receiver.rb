@@ -1,5 +1,7 @@
 class EmailToReminderReceiver < Incoming::Strategies::Postmark
+
   def receive(mail)
+    puts mail.inspect
     reply_to = mail.from.addresses.first
 
     reminder = Reminder.create!(
