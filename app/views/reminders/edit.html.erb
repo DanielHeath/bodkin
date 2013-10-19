@@ -1,6 +1,8 @@
-<h1>Editing reminder</h1>
+<% content_for :heading do %>
+<h1>Editing Reminder</h1>
+<% end %>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @reminder %> |
+<div class="back">
 <%= link_to 'Back', reminders_path %>
+</div>

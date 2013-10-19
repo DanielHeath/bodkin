@@ -1,1 +1,30 @@
-Content for welcome page. See application.html.erb for outer content.
+<!--Content for welcome page. See application.html.erb for outer content.-->
+<% content_for :heading do %>
+	<h1>Welcome to Bodkin</h1>
+	<h2>The new Rail App to help you get organised!</h2>
+<% end %>
+<div class="row">
+	<div class="current col-md-8">
+		<h4>Current Features</h4>
+		<p>Here are some of the features that are currently avaliable. Watch this space as we will be adding more.</p>
+		<ul>
+			<li><%= link_to "Email Reminders: This feature will allow you to set up fully customisable automated emails", reminders_url %></li>
+		</ul>
+		<p>All these features can be customised to link together to create an organiser that suits your individual needs. Reminders can all be set differently depending on what they are needed for, whether it's reminding you a week before someones birthday so you can organise a present, or reminding you to go to the store after work this can be set up here.</p>
+	</div>
+	<div class= "images col-md-4">
+		<h4>New Reminder</h4>
+		<%= render partial: "reminders/form" %>
+	</div>
+</div>
+
+	<div class="row">
+		<div class="future col-md-12">
+			<h4>Future Features</h4>
+			<ul>
+				<li>Calendar</li>
+				<li>To Do</li>
+				<li>Event Tracking</li>
+			</ul>
+		</div>
+	</div>

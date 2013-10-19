@@ -1,33 +1,39 @@
-<h1>Listing reminders</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>When</th>
-      <th>Subject</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% content_for :heading do %>
+<h1>Reminders Log</h1>
+<% end %>
 
-  <tbody>
-    <% @reminders.each do |reminder| %>
-      <tr>
-        <td><%= reminder.email %></td>
-        <td><%= reminder.when %></td>
-        <td><%= reminder.subject %></td>
-        <td><%= reminder.body %></td>
-        <td><%= link_to 'Show', reminder %></td>
-        <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
-        <td><%= link_to 'Destroy', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+    <div class= "col-md-8">
+      <h4>List of your email reminders</h4>
+      <table  cellpadding="10" class="table table-hover">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>When</th>
+            <th>Subject</th>
+            <th>Body</th>
+            <th colspan="2">Change or delete reminder</th>
+          </tr>
+        </thead>
 
-<br>
+        <tbody>
+          <% @reminders.each do |reminder| %>
+            <tr>
+              <td><%= reminder.email %></td>
+              <td><%= reminder.when %></td>
+              <td><%= reminder.subject %></td>
+              <td><%= reminder.body %></td>
+              <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
+              <td><%= link_to 'Delete', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<%= link_to 'New Reminder', new_reminder_path %>
+    <div class= "images col-md-4">
+      <h4>New Reminder</h4>
+      <%= render partial: "reminders/form" %>
+    </div>
+</div>

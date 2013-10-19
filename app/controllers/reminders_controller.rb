@@ -5,6 +5,7 @@ class RemindersController < ApplicationController
   # GET /reminders.json
   def index
     @reminders = Reminder.all
+    @reminder = Reminder.new
   end
 
   # GET /reminders/1

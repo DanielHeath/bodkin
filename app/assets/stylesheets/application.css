@@ -8,7 +8,46 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require bootstrap.min
+ *= require_self
  *= require_tree .
  */
+
+body,
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Unna', serif;
+}
+
+body {
+	background-color: #65a5d1;
+}
+
+.container {
+	background-color: #FFF;
+	border-radius: 1px;
+}
+
+li:hover a,
+td:hover a,
+.back:hover a{
+	background-color: #BF8130;
+	color: #FF9000;
+	text-decoration: underline;
+}
+
+
+.headings {
+	text-align: center;
+	margin-bottom: 10px;
+	background-color: #3E94D1;
+	color: #FFF;
+	padding: 5px;
+}
+
+.images h4 {
+	text-align: center;
+	color: #65a5d1;
+}
