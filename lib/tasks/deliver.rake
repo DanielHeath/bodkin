@@ -1,9 +1,10 @@
 
 desc "Deliver all overdue reminders"
-task :deliver do
+task :deliver => :environment do
+  Rails.application.eager_load!
   Reminder.due.each do |reminder|
     puts "Delivering reminder #{reminder.id} to #{reminder.email}"
-    UserMailer.reminder_email(reminder).deliver
+    ReminderMailer.reminder_email(reminder).deliver
     reminder.delivered = true
     reminder.save!
   end
