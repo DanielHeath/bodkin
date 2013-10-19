@@ -34,6 +34,8 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    chronic (0.10.2)
+    coderay (1.0.9)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -46,9 +48,6 @@ GEM
     highline (1.6.20)
     hike (1.2.3)
     i18n (0.6.5)
-    incoming (0.1.5)
-      mail (~> 2.4)
-      postmark-mitt (~> 0.0.11)
     jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -56,11 +55,11 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    json_pure (1.8.1)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.2)
@@ -76,12 +75,13 @@ GEM
     postmark (1.0.1)
       json
       rake
-    postmark-mitt (0.0.11)
-      json_pure
-      multi_json
     postmark-rails (0.5.2)
       actionmailer (>= 3.0.0)
       postmark (~> 1.0)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -105,6 +105,7 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    slop (3.4.6)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -137,12 +138,13 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (~> 2.15)
+  chronic
   coffee-rails (~> 4.0.0)
-  incoming
   jbuilder (~> 1.2)
   jquery-rails
   mysql2
   postmark-rails
+  pry
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sqlite3
