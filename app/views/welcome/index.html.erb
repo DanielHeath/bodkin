@@ -5,26 +5,30 @@
 <% end %>
 <div class="row">
 	<div class="current col-md-8">
-		<h4>Current Features</h4>
-		<p>Here are some of the features that are currently avaliable. Watch this space as we will be adding more.</p>
+		<h4>Email Reminders by Form</h4>
+		<p>This application allows you to set up an email reminder. Simply use the form to the right, enter your email address, when you would like to be reminded and what you want the email to say and it will be delivered to you.<br> Made a mistake? No problem, simply use the link before to browse, edit or delete any previous reminder made.</p>
 		<ul>
-			<li><%= link_to "Email Reminders: This feature will allow you to set up fully customisable automated emails", reminders_url %></li>
+			<li><%= link_to "Reminders Log: This feature will allow you to view and edit previous reminders", reminders_url %></li>
 		</ul>
-		<p>All these features can be customised to link together to create an organiser that suits your individual needs. Reminders can all be set differently depending on what they are needed for, whether it's reminding you a week before someones birthday so you can organise a present, or reminding you to go to the store after work this can be set up here.</p>
+		<p>Reminders can all be set differently depending on what they are needed for, whether it's reminding you a week before someones birthday so you can organise a present, or reminding you to go to the store after work this can be done with Bodkin!</p><br>
+
+		<h4>Email Reminders by Email</h4>
+		<p>Another way to set up emails is to send an email to the address below. Including the reminder details in the subject line.</p>
+			<ol>
+				<li><a href="mailto:reminder@bodk.in?&Subject=Day:Time:Reminder&body=Update%20the%20subject%20to%20setup%20your%20reminder%20email" target="_top">
+Send Mail to reminder@bodk.in</a></li>
+				<li>Update the subject line to include the Day:Time:Reminder
+					<ul>
+						<li>Day can be a date with yyyy-mm-dd such as 2013-03-27, or the name of the day such: as next Monday</li>
+						<li>Time will defailt to around the time you entered it on the day specified</li><li>The reminder message is for your reference only.</li>
+						</li>
+					</ul>
+				<li>You will immediately get an email back confirming your reminder or advising if any of the details were entered incorrectly.</li>
+				<li>The reminder can be viewed or changed via the <%= link_to "reminders log", reminders_url %> and you will receive your email at the day and time specified.</li>
+			</ol>
 	</div>
 	<div class= "images col-md-4">
 		<h4>New Reminder</h4>
 		<%= render partial: "reminders/form" %>
 	</div>
 </div>
-
-	<div class="row">
-		<div class="future col-md-12">
-			<h4>Future Features</h4>
-			<ul>
-				<li>Calendar</li>
-				<li>To Do</li>
-				<li>Event Tracking</li>
-			</ul>
-		</div>
-	</div>
