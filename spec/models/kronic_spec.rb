@@ -25,7 +25,9 @@ describe Kronic do
 
   end
 
-  # TODO: 2013-10-12
+  it "handles '2013-10-12'" do
+    expect(Kronic.parse('2013-10-12', START)).to eq(Time.parse("2013-10-12").to_date)
+  end
 
 end
 #      require 'pry'; binding.pry unless defined?(EXIT_NOW)
