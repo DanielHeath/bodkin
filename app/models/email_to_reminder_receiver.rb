@@ -19,12 +19,11 @@ class EmailToReminderReceiver
     subject = mail["Subject"]
     reply_to = mail["ReplyTo"]
     reply_to = mail["FromFull"]["Email"] if reply_to.blank?
-    raise mail["FromFull"].inspect if reply_to.blank?
 
     date = DateTime.parse mail["Date"]
     body = mail["HtmlBody"].blank? ? mail["TextBody"] : mail["HtmlBody"]
 
-    reminder_address = mail["ToFull"].first["Email"].split("@").first
+    reminder_address = mail["ToFull"].map {|e| e["Email"].split("@") }.find {|e| (e.last == "bodk.in") or e.last == "inbound.postmarkapp.com"}.first
 
     guessed_date = parse(reminder_address, date)
     guessed_date = parse(subject, date) if guessed_date.blank?
