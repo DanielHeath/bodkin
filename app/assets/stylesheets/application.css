@@ -32,16 +32,17 @@ body {
 
 li:hover a,
 td:hover a,
-.back:hover a{
+.back:hover a,
+.links:hover a {
 	background-color: #BF8130;
 	color: #FF9000;
 	text-decoration: underline;
 }
 
 
-.headings {
+.headings,
+.footer {
 	text-align: center;
-	margin-bottom: 10px;
 	background-color: #3E94D1;
 	color: #FFF;
 	padding: 5px;
@@ -50,4 +51,12 @@ td:hover a,
 .images h4 {
 	text-align: center;
 	color: #65a5d1;
+}
+
+.show strong {
+	color: #3E94D1;
+}
+
+.show p {
+	font-size: 1.125em;
 }

@@ -1,24 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="show">
+	<% content_for :heading do %>
+		<h2>Your Reminder has been completed!</h2>
+	<% end %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @reminder.email %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>When:</strong>
-  <%= @reminder.when %>
-</p>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @reminder.email %>
+	</p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @reminder.subject %>
-</p>
+	<p>
+	  <strong>When:</strong>
+	  <%= @reminder.when.strftime("%a, %e %b %Y %H:%M:%S %z") %>
+	</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @reminder.body %>
-</p>
+	<p>
+	  <strong>Subject:</strong>
+	  <%= @reminder.subject %>
+	</p>
 
-<%= link_to 'Edit', edit_reminder_path(@reminder) %> |
-<%= link_to 'Back', reminders_path %>
+	<p>
+	  <strong>Body:</strong>
+	  <%= @reminder.body %>
+	</p>
+	<div class="links">
+	<%= link_to 'Edit', edit_reminder_path(@reminder) %> |
+	</div>
+	<div class="links">
+	<%= link_to 'Back', reminders_path %>
+	</div>
+</div>
