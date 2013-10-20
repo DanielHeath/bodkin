@@ -37,7 +37,9 @@ class EmailToReminderReceiver
     )
 
     if guessed_date.blank? or guessed_date.is_a?(Range)
-      ReminderMailer.error_email(reminder).deliver
+      ReminderMailer.error_email(reminder, subject).deliver
+    elsif reminder.when.past?
+      ReminderMailer.already_past_email(reminder, subject).deliver
     else
       reminder.save!
       ReminderMailer.reply_email(reminder).deliver

@@ -12,7 +12,7 @@
             <th>Email</th>
             <th>When</th>
             <th>Subject</th>
-            <th>Body</th>
+            <th>Delivered</th>
             <th colspan="2">Change or delete reminder</th>
           </tr>
         </thead>
@@ -23,7 +23,7 @@
               <td><%= reminder.email %></td>
               <td><%= reminder.when %></td>
               <td><%= reminder.subject %></td>
-              <td><%= reminder.body %></td>
+              <td><%= reminder.delivered %></td>
               <td><%= link_to 'Edit', edit_reminder_path(reminder) %></td>
               <td><%= link_to 'Delete', reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
