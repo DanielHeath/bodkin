@@ -30,7 +30,7 @@ class EmailToReminderReceiver
 
     reminder = Reminder.new(
       :email => reply_to,
-      :when => guessed_date,
+      :when => guessed_date - 2.hours,
       :subject => subject,
       :body => body,
     )

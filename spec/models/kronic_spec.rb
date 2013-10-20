@@ -27,6 +27,5 @@ describe Kronic do
 
   # TODO: 2013-10-12
 
-
 end
 #      require 'pry'; binding.pry unless defined?(EXIT_NOW)
