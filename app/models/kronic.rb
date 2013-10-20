@@ -74,14 +74,15 @@ class Kronic
     # Parse "Monday", "Monday week"
     def parse_next_or_this_day(string, today)
       tokens = string.split(DELIMITER)
-      adjust = tokens.last == "week" ? 7 : 0
+
+      adjust = tokens.last == "week" ? 7.days : 0
       days = (1..7).map {|x|
-        today + x + adjust
+        today + x.days + adjust
       }.inject({}) {|a, x|
         a.update(x.strftime("%A").downcase => x)
       }
 
-      days[tokens[1]]
+      days[tokens.first]
     end
 
     # Parse "14 Sep", "14 September", "14 September 2010", "Sept 14 2010"
